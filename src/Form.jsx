@@ -18,7 +18,7 @@ export default function Form() {
   } = useForm({ resolver: yupResolver(schema) })
 
   const onSubmit = async (data) => {
-    const response = await fetch(process.env.REACT_APP_LAMBDA_URL, {
+    const response = await fetch('https://api.coffeeheim.com/permittedlist', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
