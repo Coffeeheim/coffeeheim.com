@@ -1,0 +1,4 @@
+name = "coffeeheim"
+pages_build_output_dir = "./build"
+compatibility_date = "2024-09-24"
+upload_source_maps = true
