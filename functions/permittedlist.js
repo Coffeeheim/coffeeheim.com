@@ -11,7 +11,7 @@ async function processReq() {
   }
 }
 
-async function onRequest(context) {
+export async function onRequest(context) {
   if (context.request.method !== 'POST') {
     return new Response('Method Not Allowed', { status: 405 })
   }
@@ -20,5 +20,3 @@ async function onRequest(context) {
 
   return new Response(JSON.stringify({}), { status: 202 })
 }
-
-export default onRequest
