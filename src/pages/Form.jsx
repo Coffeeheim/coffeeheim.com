@@ -44,7 +44,7 @@ export default function Form() {
       <p>
         If you would like to join us on Valheim, you must be on our{' '}
         <span className="font-semibold">permittedlist</span>. Please submit the
-        following form.
+        following form to be added immediately.
       </p>
 
       <form
