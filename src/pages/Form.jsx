@@ -41,6 +41,12 @@ export default function Form() {
     <>
       <h2 className="font-semibold text-2xl">Join us</h2>
 
+      <p>
+        If you would like to join us on Valheim, you must be on our{' '}
+        <span className="font-semibold">permittedlist</span>. Please submit the
+        following form.
+      </p>
+
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="border bg-gray-50 p-5 space-y-2.5 rounded-md lg:w-2/4"
@@ -53,10 +59,6 @@ export default function Form() {
             </span>
           </p>
         )}
-
-        <p>
-          If you would like to join us on Valheim, submit the following form.
-        </p>
 
         <div>
           <label className="space-y-0.5">

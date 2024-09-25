@@ -6,3 +6,7 @@ body {
   @apply text-base antialiased;
   @apply p-2.5;
 }
+
+main a {
+  @apply text-indigo-500 underline hover:no-underline;
+}

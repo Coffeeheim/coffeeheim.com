@@ -1,8 +1,26 @@
 import { ReactComponent as Discordsvg } from './discord.svg'
 import { ReactComponent as Kovisvg } from './kofi.svg'
 import coffeeheim from './coffeeheim-512x512.webp'
-import Form from './Form'
-import Rules from './Rules'
+import Form from './pages/Form'
+import Rules from './pages/Rules'
+import Guide from './pages/Guide'
+
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Rules />,
+  },
+  {
+    path: '/permittedlist',
+    element: <Form />,
+  },
+  {
+    path: '/guide',
+    element: <Guide />,
+  },
+])
 
 function Discord() {
   return (
@@ -32,12 +50,12 @@ function App() {
   return (
     <div className="max-w-screen-md mx-auto">
       <header className="mb-5 space-y-2 md:flex justify-between">
-        <div className="flex">
+        <a href={`/`} className="flex">
           <div className="w-12 h-12 mr-2.5 rounded-lg bg-gray-100 overflow-hidden">
             <img src={coffeeheim} alt="Coffeeheim" title="Coffeeheim" />
           </div>
           <h1 className="font-bold text-5xl">Coffeeheim</h1>
-        </div>
+        </a>
 
         <div className="flex gap-2">
           <Discord />
@@ -45,31 +63,37 @@ function App() {
         </div>
       </header>
 
-      <section className="space-y-2.5">
-        <Rules />
-        <Form />
-        <div className="space-y-2.5">
-          <h3 className="font-semibold text-2xl">
-            Check out what our community is up to!
-          </h3>
-          <iframe
-            className="w-full aspect-video"
-            src="https://www.youtube.com/embed/IAvt_V4rCa8?si=mxgF3uW9NmHFa0t-&amp;controls=0"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          />
-        </div>
-      </section>
+      <nav className="mb-4 bg-gray-100 px-4 py-2.5 rounded">
+        <ul className="flex gap-5 font-semibold">
+          <li>
+            <a href={`/`} className="hover:underline">
+              Rules
+            </a>
+          </li>
+          <li>
+            <a href={`/permittedlist`} className="hover:underline">
+              How to join us
+            </a>
+          </li>
+          <li>
+            <a href={`/guide`} className="hover:underline">
+              Modpack guide
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-      <section className="mt-4 bg-gray-100 px-4 py-2.5 rounded">
+      <main className="space-y-2.5">
+        <RouterProvider router={router} />
+      </main>
+
+      <section className="mt-4 border-t px-4 py-2.5">
         <div className="flex justify-between">
           <span>&copy; {new Date().getFullYear()} Coffeeheim</span>
           <ul className="flex gap-2.5 text-indigo-500">
             <li>
               <a
-                href="https://github.com/sergiors/coffeeheim"
+                href="https://github.com/coffeeheim"
                 className="underline hover:no-underline"
               >
                 GitHub

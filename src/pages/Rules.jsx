@@ -19,6 +19,20 @@ export default function Rules() {
           part.
         </li>
       </ul>
+
+      <div className="space-y-2.5">
+        <h3 className="font-semibold text-2xl">
+          Check out what our community is up to!
+        </h3>
+        <iframe
+          className="w-full aspect-video"
+          src="https://www.youtube.com/embed/IAvt_V4rCa8?si=mxgF3uW9NmHFa0t-&amp;controls=0"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        />
+      </div>
     </div>
   )
 }
